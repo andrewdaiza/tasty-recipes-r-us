@@ -1,11 +1,15 @@
 import React from "react";
 import Recipe from "./Recipe";
 
-const Recipes = ({ recipeData }) => {
+const Recipes = ({ recipeData, showDetailView }) => {
   return (
     <div>
       {recipeData.map((data) => (
-        <Recipe key={data.uuid} recipeData={data} />
+        <Recipe
+          key={data.uuid}
+          recipeData={data}
+          showDetailView={showDetailView}
+        />
       ))}
     </div>
   );
