@@ -35,14 +35,28 @@ const Home = () => {
     const data = await res.json();
     return data;
   };
+  // Add Recipe
+  const addRecipe = async (recipe) => {
+    const res = await fetch("http://localhost:3001/recipes", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(recipe),
+    });
+    const data = await res.json();
+    console.log(data);
+    setRecipeData([...recipeData, data]);
+  };
   const handleDetailView = (recipeData) => {
     setDetailView(!detailView);
     setSelectedRecipe(recipeData);
   };
+  console.log(recipeData);
   return (
     <>
       <div className='container'>
-        {recipeData && <RecipeForm />}
+        {recipeData && <RecipeForm addNewRecipe={addRecipe} />}
         {recipeData &&
           (detailView ? (
             <RecipeDetails
