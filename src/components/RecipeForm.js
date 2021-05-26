@@ -10,8 +10,11 @@ const RecipeForm = ({ addNewRecipe }) => {
   const [inputPrep, setInputPrep] = useState();
   const [inputCook, setInputCook] = useState();
   const [inputDirections, setInputDirections] = useState();
+  const [inputDirectionsOptional, setInputDirectionsOptional] = useState(false);
   const [inputIngredients, setInputIngredients] = useState();
   const [inputIngredientsAmount, setInputIngredientsAmount] = useState();
+  const [inputIngredientsMeasurement, setInputIngredientsMeasurement] =
+    useState();
   const [addDirections, setAddDirections] = useState([]);
   const [addIngredients, setAddIngredients] = useState([]);
 
@@ -23,22 +26,47 @@ const RecipeForm = ({ addNewRecipe }) => {
 
   const handleDirections = (e) => {
     e.preventDefault();
-    setAddDirections([...addDirections, inputDirections]);
+    if (inputDirections === "") {
+      alert("Please enter an ingredient and amount");
+      return;
+    } else {
+      setAddDirections([
+        ...addDirections,
+        {
+          instructions: inputDirections,
+          optional: Boolean(inputDirectionsOptional),
+        },
+      ]);
+    }
     setInputDirections("");
+    setInputDirectionsOptional("");
+    console.log(addDirections);
   };
 
   const handleIngredients = (e) => {
     e.preventDefault();
-    setAddIngredients([
-      ...addIngredients,
-      {
-        uuid: uuidv4(),
-        name: inputIngredients,
-        amount: inputIngredientsAmount,
-      },
-    ]);
+    if (
+      inputIngredients === "" ||
+      inputIngredientsMeasurement === "" ||
+      inputIngredientsAmount <= 0
+    ) {
+      alert("Please enter an ingredient and amount");
+      return;
+    } else {
+      setAddIngredients([
+        ...addIngredients,
+        {
+          uuid: uuidv4(),
+          name: inputIngredients,
+          amount: Number(inputIngredientsAmount),
+          measurement: inputIngredientsMeasurement,
+        },
+      ]);
+    }
     setInputIngredients("");
     setInputIngredientsAmount("");
+    setInputIngredientsMeasurement("");
+    console.log(addIngredients);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -77,8 +105,9 @@ const RecipeForm = ({ addNewRecipe }) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form className='container flex-center' onSubmit={handleSubmit}>
+      <div className='header'>Add/Edit Recipe</div>
+      <div className='form-div'>
         <label>Title</label>
         <input
           onChange={(e) => setInputTitle(e.target.value)}
@@ -87,7 +116,7 @@ const RecipeForm = ({ addNewRecipe }) => {
           value={inputTitle}
         ></input>
       </div>
-      <div>
+      <div className='form-div'>
         <label>Description</label>
         <input
           onChange={(e) => setInputDesc(e.target.value)}
@@ -96,7 +125,7 @@ const RecipeForm = ({ addNewRecipe }) => {
           value={inputDesc}
         ></input>
       </div>
-      <div>
+      <div className='form-div'>
         <label>Servings</label>
         <input
           onChange={(e) => setInputServings(e.target.value)}
@@ -105,7 +134,7 @@ const RecipeForm = ({ addNewRecipe }) => {
           value={inputServings}
         ></input>
       </div>
-      <div>
+      <div className='form-div'>
         <label>Prep Time</label>
         <input
           onChange={(e) => setInputPrep(e.target.value)}
@@ -114,7 +143,7 @@ const RecipeForm = ({ addNewRecipe }) => {
           value={inputPrep}
         ></input>
       </div>
-      <div>
+      <div className='form-div'>
         <label>Cook Time</label>
         <input
           onChange={(e) => setInputCook(e.target.value)}
@@ -123,7 +152,7 @@ const RecipeForm = ({ addNewRecipe }) => {
           value={inputCook}
         ></input>
       </div>
-      <div>
+      <div className='form-div'>
         {addIngredients && (
           <>
             <div className='header2'>Ingredient List</div>
@@ -133,12 +162,17 @@ const RecipeForm = ({ addNewRecipe }) => {
           </>
         )}
         <label>Ingredients</label>
-        <br></br>
         <input
           onChange={(e) => setInputIngredients(e.target.value)}
           type='text'
-          placeholder='Ingredients'
+          placeholder='Name'
           value={inputIngredients}
+        ></input>
+        <input
+          onChange={(e) => setInputIngredientsMeasurement(e.target.value)}
+          type='text'
+          placeholder='Measurement'
+          value={inputIngredientsMeasurement}
         ></input>
         <input
           onChange={(e) => setInputIngredientsAmount(e.target.value)}
@@ -148,7 +182,7 @@ const RecipeForm = ({ addNewRecipe }) => {
         ></input>
         <button onClick={(e) => handleIngredients(e)}>Add Ingredient</button>
       </div>
-      <div>
+      <div className='form-div'>
         {addDirections && (
           <>
             <div className='header2'>Direction List:</div>
@@ -163,6 +197,12 @@ const RecipeForm = ({ addNewRecipe }) => {
           type='text'
           placeholder='Directions'
           value={inputDirections}
+        ></input>
+        <label>Required</label>
+        <input
+          onChange={() => setInputDirectionsOptional(!inputDirectionsOptional)}
+          type='checkbox'
+          checked={inputDirectionsOptional}
         ></input>
         <button onClick={(e) => handleDirections(e)}>Add Direction</button>
       </div>

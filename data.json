@@ -482,14 +482,40 @@
       ]
     },
     {
-      "uuid": "1a09dd46-f059-4cde-bc79-0942940e28c3",
-      "title": "wadawdawd",
+      "uuid": "11c2cdc3-79ea-45af-b883-f68cc6ad3563",
+      "title": "awdwa",
       "description": "awdaw",
-      "servings": 2332,
-      "prepTime": 3223,
-      "cookTime": 2323,
-      "ingredients": ["awdawd", "awdwad"],
-      "directions": ["awdawd", "awdawd"],
+      "servings": 3,
+      "prepTime": 5,
+      "cookTime": 2,
+      "ingredients": [
+        {
+          "uuid": "74961f72-29d9-45b3-9348-ff8eaf3cb44c",
+          "name": "wadaw",
+          "amount": 22,
+          "measurement": "awdwad"
+        },
+        {
+          "uuid": "e671001b-8399-46ef-88fb-b10b4dd24e78",
+          "name": "daw",
+          "amount": 3223,
+          "measurement": "ffff"
+        }
+      ],
+      "directions": [
+        {
+          "instructions": "awdawddaw",
+          "optional": false
+        },
+        {
+          "instructions": "awdwadaw",
+          "optional": true
+        },
+        {
+          "instructions": "fffff",
+          "optional": true
+        }
+      ],
       "images": {
         "full": "/img/queso_brat_scramble.jpg",
         "medium": "/img/queso_brat_scramble--m.jpg",

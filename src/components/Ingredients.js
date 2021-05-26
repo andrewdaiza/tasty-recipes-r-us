@@ -5,8 +5,12 @@ const Ingredients = ({ ingredient, specialsData }) => {
   return (
     <>
       <li>
-        <span>{ingredient.amount} </span>
+        <span>
+          {ingredient.amount}
+          <span> {ingredient.measurement} </span>
+        </span>
         {ingredient.name}
+
         {specialsData.map(
           (sData) =>
             ingredient.uuid === sData.ingredientId && <Special sData={sData} />

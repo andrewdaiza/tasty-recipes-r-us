@@ -2,7 +2,10 @@ import React from "react";
 
 const Recipe = ({ recipeData, showDetailView }) => {
   return (
-    <div onClick={() => showDetailView(recipeData)} className='card'>
+    <div
+      onClick={() => showDetailView(recipeData)}
+      className='card flex-center'
+    >
       <div>
         <img src={recipeData.images.small} />
       </div>
