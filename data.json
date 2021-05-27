@@ -151,18 +151,11 @@
     },
     {
       "uuid": "7f8e872d-47a5-44e6-b1ad-7b7cb94f1d30",
-      "title": "Italian Meatballs",
-      "description": "Quick, easy and authentic.",
-      "images": {
-        "full": "/img/italian_meatballs.jpg",
-        "medium": "/img/italian_meatballs--m.jpg",
-        "small": "/img/italian_meatballs--s.jpg"
-      },
-      "servings": 6,
-      "prepTime": 25,
-      "cookTime": 20,
-      "postDate": "02/19/2018 12:47:42 AM",
-      "editDate": "02/19/2018 01:12:05 AM",
+      "title": "Italian Meatballs COOL",
+      "description": "Not so good",
+      "servings": 3000,
+      "prepTime": 50000,
+      "cookTime": 123919238,
       "ingredients": [
         {
           "uuid": "3d810ba9-7e4e-48aa-b2e9-7918e38b358d",
@@ -199,6 +192,18 @@
           "amount": 1.25,
           "measurement": "lbs",
           "name": "ground italian sausage"
+        },
+        {
+          "uuid": "e287ae16-4f83-46b5-bc84-bec8cbb0084a",
+          "name": "alwdjawd",
+          "amount": null,
+          "measurement": "wadawdwa"
+        },
+        {
+          "uuid": "0bb065dc-01cc-485c-8909-b92fe0e65fac",
+          "name": "awlkdjawljd",
+          "amount": 2321321,
+          "measurement": "liawjdlawkd"
         }
       ],
       "directions": [
@@ -225,8 +230,21 @@
         {
           "instructions": "Serve with your favorite sauce and spaghetti.",
           "optional": true
+        },
+        {
+          "instructions": "adwd222adw",
+          "optional": false
+        },
+        {
+          "instructions": "2ddaa2ead",
+          "optional": true
         }
-      ]
+      ],
+      "images": {
+        "full": "/img/italian_meatballs.jpg",
+        "medium": "/img/italian_meatballs--m.jpg",
+        "small": "/img/italian_meatballs--s.jpg"
+      }
     },
     {
       "uuid": "3555aec3-47e1-44d4-b8f2-607aad5cee67",
@@ -480,47 +498,6 @@
           "optional": false
         }
       ]
-    },
-    {
-      "uuid": "11c2cdc3-79ea-45af-b883-f68cc6ad3563",
-      "title": "awdwa",
-      "description": "awdaw",
-      "servings": 3,
-      "prepTime": 5,
-      "cookTime": 2,
-      "ingredients": [
-        {
-          "uuid": "74961f72-29d9-45b3-9348-ff8eaf3cb44c",
-          "name": "wadaw",
-          "amount": 22,
-          "measurement": "awdwad"
-        },
-        {
-          "uuid": "e671001b-8399-46ef-88fb-b10b4dd24e78",
-          "name": "daw",
-          "amount": 3223,
-          "measurement": "ffff"
-        }
-      ],
-      "directions": [
-        {
-          "instructions": "awdawddaw",
-          "optional": false
-        },
-        {
-          "instructions": "awdwadaw",
-          "optional": true
-        },
-        {
-          "instructions": "fffff",
-          "optional": true
-        }
-      ],
-      "images": {
-        "full": "/img/queso_brat_scramble.jpg",
-        "medium": "/img/queso_brat_scramble--m.jpg",
-        "small": "/img/queso_brat_scramble--s.jpg"
-      }
     }
   ],
   "specials": [

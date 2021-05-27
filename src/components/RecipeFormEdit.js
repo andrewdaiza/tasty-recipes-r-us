@@ -3,7 +3,7 @@ import ListItems from "./ListItems";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
+const RecipeForm = ({ editRecipe, selectedRecipe }) => {
   const [inputTitle, setInputTitle] = useState();
   const [inputDesc, setInputDesc] = useState();
   const [inputServings, setInputServings] = useState();
@@ -18,10 +18,20 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
   const [addDirections, setAddDirections] = useState([]);
   const [addIngredients, setAddIngredients] = useState([]);
 
-  const placeHolderImage = {
-    full: "/img/queso_brat_scramble.jpg",
-    medium: "/img/queso_brat_scramble--m.jpg",
-    small: "/img/queso_brat_scramble--s.jpg",
+  useEffect(() => {
+    editForm();
+  }, [selectedRecipe]);
+
+  const editForm = () => {
+    if (selectedRecipe) {
+      setInputTitle(selectedRecipe.title);
+      setInputDesc(selectedRecipe.description);
+      setInputServings(selectedRecipe.servings);
+      setInputPrep(selectedRecipe.prepTime);
+      setInputCook(selectedRecipe.cookTime);
+      setAddIngredients(selectedRecipe.ingredients);
+      setAddDirections(selectedRecipe.directions);
+    }
   };
 
   const handleDirections = (e) => {
@@ -65,7 +75,6 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
     setInputIngredients("");
     setInputIngredientsAmount("");
     setInputIngredientsMeasurement("");
-    console.log(addIngredients);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -75,17 +84,14 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
       inputServings <= 0 ||
       inputPrep <= 0 ||
       inputCook <= 0 ||
-      inputIngredients === "" ||
-      inputIngredientsAmount === "" ||
-      inputIngredientsMeasurement === "" ||
       addDirections.length === 0 ||
       addIngredients.length === 0
     ) {
       alert("Invalid Data");
       return;
     } else {
-      addNewRecipe({
-        uuid: uuidv4(),
+      editRecipe({
+        uuid: selectedRecipe.uuid,
         title: inputTitle,
         description: inputDesc,
         servings: Number(inputServings),
@@ -93,13 +99,13 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
         cookTime: Number(inputCook),
         ingredients: addIngredients,
         directions: addDirections,
-        images: placeHolderImage,
+        images: selectedRecipe.images,
       });
       setInputTitle("");
       setInputDesc("");
-      setInputServings();
-      setInputPrep();
-      setInputCook();
+      setInputServings("");
+      setInputPrep("");
+      setInputCook("");
       setInputDirections("");
       setInputIngredients("");
       setAddDirections("");
@@ -111,7 +117,7 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
   };
   return (
     <form className='container flex-center' onSubmit={handleSubmit}>
-      <div className='header'>Add Recipe</div>
+      <div className='header'>Edit Recipe</div>
       <div className='form-div'>
         <label>Title</label>
         <input
