@@ -78,40 +78,54 @@ const Home = () => {
   return (
     <>
       <div className='container'>
-        <div className='header'>Tasty Recipes</div>
-        <button onClick={() => handleAddButton()}>Add Recipe</button>
         {detailView && (
-          <button onClick={() => handleEditButton()}>Edit Recipe</button>
+          <button className='btn' onClick={() => setDetailView(!detailView)}>
+            Back
+          </button>
         )}
-        {toggleShowForm && (
-          <>
-            {recipeData && addEditRecipeSelected ? (
-              <RecipeForm
-                addNewRecipe={addRecipe}
-                selectedRecipe={selectedRecipe}
-              />
-            ) : (
-              <RecipeFormEdit
-                editRecipe={editRecipe}
-                selectedRecipe={selectedRecipe}
-              />
+        <div className='flex-center'>
+          <div className='header'>Tasty Recipes</div>
+          <div>
+            <button className='btn' onClick={() => handleAddButton()}>
+              Add Recipe
+            </button>
+            {detailView && (
+              <button className='btn' onClick={() => handleEditButton()}>
+                Edit Recipe
+              </button>
             )}
-          </>
-        )}
-
-        {recipeData &&
-          (detailView ? (
-            <RecipeDetails
-              key={selectedRecipe.uuid}
-              selectedRecipe={selectedRecipe}
-              specialsData={specialsData}
-            />
-          ) : (
-            <Recipes
-              recipeData={recipeData}
-              showDetailView={handleDetailView}
-            />
-          ))}
+          </div>
+          {toggleShowForm && (
+            <>
+              {recipeData && addEditRecipeSelected ? (
+                <RecipeForm
+                  addNewRecipe={addRecipe}
+                  selectedRecipe={selectedRecipe}
+                />
+              ) : (
+                <RecipeFormEdit
+                  editRecipe={editRecipe}
+                  selectedRecipe={selectedRecipe}
+                />
+              )}
+            </>
+          )}
+          <div className='flex-large'>
+            {recipeData &&
+              (detailView ? (
+                <RecipeDetails
+                  key={selectedRecipe.uuid}
+                  selectedRecipe={selectedRecipe}
+                  specialsData={specialsData}
+                />
+              ) : (
+                <Recipes
+                  recipeData={recipeData}
+                  showDetailView={handleDetailView}
+                />
+              ))}
+          </div>
+        </div>
       </div>
     </>
   );

@@ -75,9 +75,6 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
       inputServings <= 0 ||
       inputPrep <= 0 ||
       inputCook <= 0 ||
-      inputIngredients === "" ||
-      inputIngredientsAmount === "" ||
-      inputIngredientsMeasurement === "" ||
       addDirections.length === 0 ||
       addIngredients.length === 0
     ) {
@@ -112,106 +109,110 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
   return (
     <form className='container flex-center' onSubmit={handleSubmit}>
       <div className='header'>Add Recipe</div>
-      <div className='form-div'>
-        <label>Title</label>
-        <input
-          onChange={(e) => setInputTitle(e.target.value)}
-          type='text'
-          placeholder='Title'
-          value={inputTitle}
-        ></input>
+      <div className='form-container'>
+        <div className='form-div'>
+          <label>Title</label>
+          <input
+            onChange={(e) => setInputTitle(e.target.value)}
+            type='text'
+            placeholder='Title'
+            value={inputTitle}
+          ></input>
+          <label>Description</label>
+          <input
+            onChange={(e) => setInputDesc(e.target.value)}
+            type='text'
+            placeholder='Description'
+            value={inputDesc}
+          ></input>
+          <label>Servings</label>
+          <input
+            onChange={(e) => setInputServings(e.target.value)}
+            type='number'
+            placeholder='Servings'
+            value={inputServings}
+          ></input>
+          <label>Prep Time</label>
+          <input
+            onChange={(e) => setInputPrep(e.target.value)}
+            type='number'
+            placeholder='Prep Time'
+            value={inputPrep}
+          ></input>
+          <label>Cook Time</label>
+          <input
+            onChange={(e) => setInputCook(e.target.value)}
+            type='number'
+            placeholder='Cook Time'
+            value={inputCook}
+          ></input>
+        </div>
+        <div className='form-div'>
+          {addIngredients && (
+            <>
+              <div className='header2'>Ingredient List</div>
+              <ul>
+                <ListItems param={addIngredients} />
+              </ul>
+            </>
+          )}
+          <label>Ingredients</label>
+          <input
+            onChange={(e) => setInputIngredients(e.target.value)}
+            type='text'
+            placeholder='Name'
+            value={inputIngredients}
+          ></input>
+          <label>Measurement</label>
+          <input
+            onChange={(e) => setInputIngredientsMeasurement(e.target.value)}
+            type='text'
+            placeholder='Measurement'
+            value={inputIngredientsMeasurement}
+          ></input>
+          <label>Amount</label>
+          <input
+            onChange={(e) => setInputIngredientsAmount(e.target.value)}
+            type='number'
+            placeholder='Amount'
+            value={inputIngredientsAmount}
+          ></input>
+          <button className='btn' onClick={(e) => handleIngredients(e)}>
+            Add Ingredient
+          </button>
+        </div>
+        <div className='form-div'>
+          {addDirections && (
+            <>
+              <div className='header2'>Direction List:</div>
+              <ol>
+                <ListItems param={addDirections} />
+              </ol>
+            </>
+          )}
+          <label>Directions</label>
+          <input
+            onChange={(e) => setInputDirections(e.target.value)}
+            type='text'
+            placeholder='Directions'
+            value={inputDirections}
+          ></input>
+          <label>Required</label>
+          <input
+            onChange={() =>
+              setInputDirectionsOptional(!inputDirectionsOptional)
+            }
+            type='checkbox'
+            checked={inputDirectionsOptional}
+          ></input>
+          <button className='btn' onClick={(e) => handleDirections(e)}>
+            Add Direction
+          </button>
+          <div className='btn-save'>
+            <input className='btn' type='submit' value='Save Recipe' />
+          </div>
+        </div>
       </div>
-      <div className='form-div'>
-        <label>Description</label>
-        <input
-          onChange={(e) => setInputDesc(e.target.value)}
-          type='text'
-          placeholder='Description'
-          value={inputDesc}
-        ></input>
-      </div>
-      <div className='form-div'>
-        <label>Servings</label>
-        <input
-          onChange={(e) => setInputServings(e.target.value)}
-          type='number'
-          placeholder='Servings'
-          value={inputServings}
-        ></input>
-      </div>
-      <div className='form-div'>
-        <label>Prep Time</label>
-        <input
-          onChange={(e) => setInputPrep(e.target.value)}
-          type='number'
-          placeholder='Prep Time'
-          value={inputPrep}
-        ></input>
-      </div>
-      <div className='form-div'>
-        <label>Cook Time</label>
-        <input
-          onChange={(e) => setInputCook(e.target.value)}
-          type='number'
-          placeholder='Cook Time'
-          value={inputCook}
-        ></input>
-      </div>
-      <div className='form-div'>
-        {addIngredients && (
-          <>
-            <div className='header2'>Ingredient List</div>
-            <ul>
-              <ListItems param={addIngredients} />
-            </ul>
-          </>
-        )}
-        <label>Ingredients</label>
-        <input
-          onChange={(e) => setInputIngredients(e.target.value)}
-          type='text'
-          placeholder='Name'
-          value={inputIngredients}
-        ></input>
-        <input
-          onChange={(e) => setInputIngredientsMeasurement(e.target.value)}
-          type='text'
-          placeholder='Measurement'
-          value={inputIngredientsMeasurement}
-        ></input>
-        <input
-          onChange={(e) => setInputIngredientsAmount(e.target.value)}
-          type='number'
-          placeholder='Amount'
-          value={inputIngredientsAmount}
-        ></input>
-        <button onClick={(e) => handleIngredients(e)}>Add Ingredient</button>
-      </div>
-      <div className='form-div'>
-        {addDirections && (
-          <>
-            <div className='header2'>Direction List:</div>
-            <ol>
-              <ListItems param={addDirections} />
-            </ol>
-          </>
-        )}
-        <label>Directions</label>
-        <input
-          onChange={(e) => setInputDirections(e.target.value)}
-          type='text'
-          placeholder='Directions'
-          value={inputDirections}
-        ></input>
-        <label>Required</label>
-        <input
-          onChange={() => setInputDirectionsOptional(!inputDirectionsOptional)}
-          type='checkbox'
-          checked={inputDirectionsOptional}
-        ></input>
-        <button onClick={(e) => handleDirections(e)}>Add Direction</button>
-      </div>
-      <input type='submit' value='Save Recipe' />
     </form>
   );
 };

@@ -4,7 +4,7 @@ import Directions from "./Directions";
 
 const RecipeDetails = ({ selectedRecipe, specialsData }) => {
   return (
-    <div>
+    <div className='flex-center'>
       <img src={selectedRecipe.images.medium} />
       <div className='header'>{selectedRecipe.title}</div>
       <div>{selectedRecipe.description}</div>

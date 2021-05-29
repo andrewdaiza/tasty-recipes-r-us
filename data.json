@@ -151,11 +151,11 @@
     },
     {
       "uuid": "7f8e872d-47a5-44e6-b1ad-7b7cb94f1d30",
-      "title": "Italian Meatballs COOL",
-      "description": "Not so good",
-      "servings": 3000,
-      "prepTime": 50000,
-      "cookTime": 123919238,
+      "title": "Italian Meatballs EDIT",
+      "description": "Quick, easy and authentic.",
+      "servings": 6543,
+      "prepTime": 25333,
+      "cookTime": 20333,
       "ingredients": [
         {
           "uuid": "3d810ba9-7e4e-48aa-b2e9-7918e38b358d",
@@ -194,16 +194,10 @@
           "name": "ground italian sausage"
         },
         {
-          "uuid": "e287ae16-4f83-46b5-bc84-bec8cbb0084a",
-          "name": "alwdjawd",
-          "amount": null,
-          "measurement": "wadawdwa"
-        },
-        {
-          "uuid": "0bb065dc-01cc-485c-8909-b92fe0e65fac",
-          "name": "awlkdjawljd",
-          "amount": 2321321,
-          "measurement": "liawjdlawkd"
+          "uuid": "7ca10ec5-bb38-41da-8149-0b184eb633b8",
+          "name": "wadawd",
+          "amount": 2323,
+          "measurement": "awdaw"
         }
       ],
       "directions": [
@@ -232,11 +226,7 @@
           "optional": true
         },
         {
-          "instructions": "adwd222adw",
-          "optional": false
-        },
-        {
-          "instructions": "2ddaa2ead",
+          "instructions": "awdawd",
           "optional": true
         }
       ],
@@ -248,18 +238,11 @@
     },
     {
       "uuid": "3555aec3-47e1-44d4-b8f2-607aad5cee67",
-      "title": "Kielbasa Skillet",
-      "description": "A polish delicacy.",
-      "images": {
-        "full": "/img/kielbasa_skillet.jpg",
-        "medium": "/img/kielbasa_skillet--m.jpg",
-        "small": "/img/kielbasa_skillet--s.jpg"
-      },
-      "servings": 8,
-      "prepTime": 20,
-      "cookTime": 20,
-      "postDate": "03/12/2018 01:51:12 PM",
-      "editDate": "03/15/2018 04:14:03 PM",
+      "title": "Kielbasa Skillet EDIT",
+      "description": "A polish delicacy.123",
+      "servings": 844,
+      "prepTime": 2023,
+      "cookTime": 20455,
       "ingredients": [
         {
           "uuid": "3d810ba9-7e4e-48aa-b2e9-7918e38b358d",
@@ -314,6 +297,12 @@
           "amount": 2,
           "measurement": "packages (24 oz each)",
           "name": "refrigerated prepared mashed potatoes"
+        },
+        {
+          "uuid": "a5689e3f-192c-497a-af8d-48a587fc1105",
+          "name": "awdaw",
+          "amount": 232332,
+          "measurement": "awdawd"
         }
       ],
       "directions": [
@@ -332,8 +321,17 @@
         {
           "instructions": "Serve with sausage mixture.",
           "optional": false
+        },
+        {
+          "instructions": "wadwad",
+          "optional": true
         }
-      ]
+      ],
+      "images": {
+        "full": "/img/kielbasa_skillet.jpg",
+        "medium": "/img/kielbasa_skillet--m.jpg",
+        "small": "/img/kielbasa_skillet--s.jpg"
+      }
     },
     {
       "uuid": "3555aec3-47e1-44d4-b8f2-607aad5cee69",
@@ -498,6 +496,43 @@
           "optional": false
         }
       ]
+    },
+    {
+      "uuid": "def86f89-da57-471a-8a63-a9c29270e680",
+      "title": "awdaw",
+      "description": "awdawd",
+      "servings": 2323,
+      "prepTime": 2323,
+      "cookTime": 2323,
+      "ingredients": [
+        {
+          "uuid": "30438f32-c22e-4e35-afe8-b2ac6718b238",
+          "name": "awdawd",
+          "amount": 32332,
+          "measurement": "awdaw"
+        },
+        {
+          "uuid": "20963b80-7f86-4337-9af6-8eb5b9aa0582",
+          "name": "awdawd",
+          "amount": 3223,
+          "measurement": "awdawd"
+        }
+      ],
+      "directions": [
+        {
+          "instructions": "awdawd",
+          "optional": true
+        },
+        {
+          "instructions": "adwwad",
+          "optional": true
+        }
+      ],
+      "images": {
+        "full": "/img/queso_brat_scramble.jpg",
+        "medium": "/img/queso_brat_scramble--m.jpg",
+        "small": "/img/queso_brat_scramble--s.jpg"
+      }
     }
   ],
   "specials": [
