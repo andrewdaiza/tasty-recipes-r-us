@@ -1,15 +1,21 @@
 import React from "react";
+import Special from "./Special";
 
-const ListItems = ({ param }) => {
+const ListItems = ({ param, specialsData }) => {
   return (
     <>
-      {param.map((param) => (
-        <li>
-          <span>{param.amount || param.instructions} </span>
-          <span> {param.measurement || param.optional} </span>
-          {param.name}
-        </li>
-      ))}
+      <li>
+        <span>{param.amount || param.instructions} </span>
+        <span> {param.measurement || param.optional} </span>
+        {param.name}
+      </li>
+      {specialsData &&
+        specialsData.map(
+          (sData) =>
+            param.uuid === sData.ingredientId && (
+              <Special key={sData.uuid} sData={sData} />
+            )
+        )}
     </>
   );
 };

@@ -10,11 +10,6 @@ const Ingredients = ({ ingredient, specialsData }) => {
           <span> {ingredient.measurement} </span>
         </span>
         {ingredient.name}
-
-        {specialsData.map(
-          (sData) =>
-            ingredient.uuid === sData.ingredientId && <Special sData={sData} />
-        )}
       </li>
     </>
   );

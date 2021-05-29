@@ -4,19 +4,20 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const RecipeForm = ({ editRecipe, selectedRecipe }) => {
-  const [inputTitle, setInputTitle] = useState();
-  const [inputDesc, setInputDesc] = useState();
-  const [inputServings, setInputServings] = useState();
-  const [inputPrep, setInputPrep] = useState();
-  const [inputCook, setInputCook] = useState();
-  const [inputDirections, setInputDirections] = useState();
+  const [inputTitle, setInputTitle] = useState("");
+  const [inputDesc, setInputDesc] = useState("");
+  const [inputServings, setInputServings] = useState("");
+  const [inputPrep, setInputPrep] = useState("");
+  const [inputCook, setInputCook] = useState("");
+  const [inputDirections, setInputDirections] = useState("");
   const [inputDirectionsOptional, setInputDirectionsOptional] = useState(false);
-  const [inputIngredients, setInputIngredients] = useState();
-  const [inputIngredientsAmount, setInputIngredientsAmount] = useState();
+  const [inputIngredients, setInputIngredients] = useState("");
+  const [inputIngredientsAmount, setInputIngredientsAmount] = useState("");
   const [inputIngredientsMeasurement, setInputIngredientsMeasurement] =
-    useState();
+    useState("");
   const [addDirections, setAddDirections] = useState([]);
   const [addIngredients, setAddIngredients] = useState([]);
+  const [postDate, setPostDate] = useState("");
 
   useEffect(() => {
     editForm();
@@ -31,7 +32,12 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
       setInputCook(selectedRecipe.cookTime);
       setAddIngredients(selectedRecipe.ingredients);
       setAddDirections(selectedRecipe.directions);
+      setPostDate(selectedRecipe.postDate);
     }
+  };
+
+  const localTimeStamp = () => {
+    return new Date().toLocaleString().split(",").join("");
   };
 
   const handleDirections = (e) => {
@@ -97,6 +103,8 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
         servings: Number(inputServings),
         prepTime: Number(inputPrep),
         cookTime: Number(inputCook),
+        postDate: postDate,
+        editDate: localTimeStamp(),
         ingredients: addIngredients,
         directions: addDirections,
         images: selectedRecipe.images,
@@ -159,9 +167,11 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
         <div className='form-div'>
           {addIngredients && (
             <>
-              <div className='header2'>Ingredient List</div>
+              <div className='header3'>Ingredient List</div>
               <ul>
-                <ListItems param={addIngredients} />
+                {addIngredients.map((ingredient) => (
+                  <ListItems key={ingredient.uuid} param={ingredient} />
+                ))}
               </ul>
             </>
           )}
@@ -193,9 +203,11 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
         <div className='form-div'>
           {addDirections && (
             <>
-              <div className='header2'>Direction List:</div>
+              <div className='header3'>Direction List:</div>
               <ol>
-                <ListItems param={addDirections} />
+                {addDirections.map((direction) => (
+                  <ListItems key={uuidv4()} param={direction} />
+                ))}
               </ol>
             </>
           )}

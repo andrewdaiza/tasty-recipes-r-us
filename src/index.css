@@ -23,11 +23,13 @@ img {
 
 .card {
   max-width: 1000px;
-  width: 90%;
-  height: 100%;
+  width: 275px;
+  height: 400px;
+  margin: 20px 30px;
+  padding: 15px 0px;
   border: 1px solid rgba(34, 36, 38, 0.1);
-  margin: 10px auto;
-  padding: 20px 0px;
+  /* margin: 20px auto; */
+  /* padding: 20px 20px; */
   border: 1px solid rgba(0, 0, 0, 0.125);
   box-shadow: 0 0 5px rgb(33 33 33 / 20%);
   border-radius: 3px;
@@ -35,10 +37,15 @@ img {
 .card > div {
   padding: 3px 0px;
 }
+.recipe-details {
+  margin-top: 20px;
+}
 .recipe-desc {
   text-align: center;
   max-width: 200px;
+  height: 50px;
 }
+
 .flex-center {
   display: flex;
   flex-direction: column;
@@ -46,15 +53,24 @@ img {
 }
 .header {
   font-weight: 600;
-  font-size: 125%;
+  font-size: 250%;
   padding: 10px 0px;
 }
 .header2 {
+  font-weight: 400;
+  font-size: 250%;
+  padding: 10px 0px;
+}
+.header3 {
   font-weight: 600;
+  font-size: 125%;
+  padding: 5px 0px;
 }
 .special {
-  border: 1px solid rgba(34, 36, 38, 0.1);
-  background: rgb(173, 173, 173);
+  color: #ef4565;
+  font-size: 75%;
+  width: 200px;
+  padding: 0px 20px;
 }
 .form-div label {
   display: block;
@@ -85,21 +101,27 @@ img {
   height: 45px;
   width: 150px;
 }
+.recipe-img {
+  width: 240px;
+  height: 180px;
+}
+
+.flex-large {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 
 @media only screen and (min-width: 600px) {
   .card {
-    width: 300px;
+    width: 275px;
     height: 400px;
     margin: 20px 30px;
-    padding: 15px 5px;
+    padding: 15px 0px;
   }
-  .flex-large {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
+
   .flex-center {
     display: flex;
     align-items: center;
@@ -110,7 +132,7 @@ img {
     align-items: flex-start;
     flex-direction: column;
   }
-  img {
+  .recipe-img {
     width: 240px;
     height: 180px;
   }

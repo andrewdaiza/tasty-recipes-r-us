@@ -4,17 +4,17 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
-  const [inputTitle, setInputTitle] = useState();
-  const [inputDesc, setInputDesc] = useState();
-  const [inputServings, setInputServings] = useState();
-  const [inputPrep, setInputPrep] = useState();
-  const [inputCook, setInputCook] = useState();
-  const [inputDirections, setInputDirections] = useState();
+  const [inputTitle, setInputTitle] = useState("");
+  const [inputDesc, setInputDesc] = useState("");
+  const [inputServings, setInputServings] = useState("");
+  const [inputPrep, setInputPrep] = useState("");
+  const [inputCook, setInputCook] = useState("");
+  const [inputDirections, setInputDirections] = useState("");
   const [inputDirectionsOptional, setInputDirectionsOptional] = useState(false);
-  const [inputIngredients, setInputIngredients] = useState();
-  const [inputIngredientsAmount, setInputIngredientsAmount] = useState();
+  const [inputIngredients, setInputIngredients] = useState("");
+  const [inputIngredientsAmount, setInputIngredientsAmount] = useState("");
   const [inputIngredientsMeasurement, setInputIngredientsMeasurement] =
-    useState();
+    useState("");
   const [addDirections, setAddDirections] = useState([]);
   const [addIngredients, setAddIngredients] = useState([]);
 
@@ -22,6 +22,9 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
     full: "/img/queso_brat_scramble.jpg",
     medium: "/img/queso_brat_scramble--m.jpg",
     small: "/img/queso_brat_scramble--s.jpg",
+  };
+  const localTimeStamp = () => {
+    return new Date().toLocaleString().split(",").join("");
   };
 
   const handleDirections = (e) => {
@@ -88,15 +91,17 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
         servings: Number(inputServings),
         prepTime: Number(inputPrep),
         cookTime: Number(inputCook),
+        postDate: localTimeStamp(),
+        editDate: localTimeStamp(),
         ingredients: addIngredients,
         directions: addDirections,
         images: placeHolderImage,
       });
       setInputTitle("");
       setInputDesc("");
-      setInputServings();
-      setInputPrep();
-      setInputCook();
+      setInputServings("");
+      setInputPrep("");
+      setInputCook("");
       setInputDirections("");
       setInputIngredients("");
       setAddDirections("");
@@ -108,7 +113,7 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
   };
   return (
     <form className='container flex-center' onSubmit={handleSubmit}>
-      <div className='header'>Add Recipe</div>
+      <div className='header2'>Add Recipe</div>
       <div className='form-container'>
         <div className='form-div'>
           <label>Title</label>
@@ -150,9 +155,11 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
         <div className='form-div'>
           {addIngredients && (
             <>
-              <div className='header2'>Ingredient List</div>
+              <div className='header3'>Ingredient List</div>
               <ul>
-                <ListItems param={addIngredients} />
+                {addIngredients.map((ingredient) => (
+                  <ListItems key={ingredient.uuid} param={ingredient} />
+                ))}
               </ul>
             </>
           )}
@@ -184,9 +191,11 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
         <div className='form-div'>
           {addDirections && (
             <>
-              <div className='header2'>Direction List:</div>
+              <div className='header3'>Direction List:</div>
               <ol>
-                <ListItems param={addDirections} />
+                {addDirections.map((direction) => (
+                  <ListItems key={uuidv4()} param={direction} />
+                ))}
               </ol>
             </>
           )}
