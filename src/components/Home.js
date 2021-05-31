@@ -12,11 +12,14 @@ const Home = () => {
   const [selectedRecipe, setSelectedRecipe] = useState("");
   const [addEditRecipeSelected, setAddEditRecipeSelected] = useState(false);
   const [toggleShowForm, setToggleShowForm] = useState(false);
+
+  // Get data from API on Mount
   useEffect(() => {
     getRecipes();
     getSpecials();
   }, []);
 
+  // Get data from API fetch
   const getRecipes = async () => {
     const recipesFromAPI = await fetchRecipes();
     setRecipeData(recipesFromAPI);
@@ -60,12 +63,16 @@ const Home = () => {
       body: JSON.stringify(recipe),
     });
     const data = await res.json();
-    setRecipeData(recipeData.map((r) => (r.uuid === recipe.uuid ? recipe : r)));
-    setSelectedRecipe(recipe);
+    setRecipeData(recipeData.map((r) => (r.uuid === recipe.uuid ? data : r)));
+    setSelectedRecipe(data);
   };
   const handleDetailView = (recipeData) => {
     setDetailView(!detailView);
     setSelectedRecipe(recipeData);
+  };
+  const handleBackButton = (recipeData) => {
+    setDetailView(!detailView);
+    setToggleShowForm(false);
   };
   const handleAddButton = () => {
     setAddEditRecipeSelected(true);
@@ -79,7 +86,7 @@ const Home = () => {
     <>
       <div className='container'>
         {detailView && (
-          <button className='btn' onClick={() => setDetailView(!detailView)}>
+          <button className='btn btn-back' onClick={() => handleBackButton()}>
             Back
           </button>
         )}
@@ -110,7 +117,7 @@ const Home = () => {
               )}
             </>
           )}
-          <div className='flex-large'>
+          <div className='flex-recipes'>
             {recipeData &&
               (detailView ? (
                 <RecipeDetails

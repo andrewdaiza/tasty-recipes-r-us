@@ -3,9 +3,8 @@ import React from "react";
 const Special = ({ sData }) => {
   return (
     <div className='special'>
-      <div className='header3'>Special:</div>
-      <div>{sData.title}</div>
-      <div>{sData.type}</div>
+      <span>{sData.title}</span>
+      <span style={{ fontWeight: "bold" }}> {sData.type}</span>
       <div>{sData.text}</div>
     </div>
   );

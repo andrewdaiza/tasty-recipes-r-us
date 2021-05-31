@@ -1,16 +1,33 @@
 import React from "react";
-import Ingredients from "./Ingredients";
-import Directions from "./Directions";
 import ListItems from "./ListItems";
 import { v4 as uuidv4 } from "uuid";
 
 const RecipeDetails = ({ selectedRecipe, specialsData }) => {
   return (
     <div className='flex-center recipe-details'>
-      <img src={selectedRecipe.images.medium} />
+      <img
+        className='details-img'
+        src={selectedRecipe.images.full}
+        alt='large preview of recipe item'
+      />
       <div className='header2'>{selectedRecipe.title}</div>
-      <div>{selectedRecipe.description}</div>
-      <div className='header3'>Ingredients:</div>
+      <div className='details-desc'>{selectedRecipe.description}</div>
+      <div className='flex-small details-items-container'>
+        <div className='details-items'>
+          <span>Servings: </span>
+          <span>{selectedRecipe.servings}</span>
+        </div>
+
+        <div className='details-items'>
+          <span>Prep Time: </span>
+          <span>{selectedRecipe.prepTime} Minutes</span>
+        </div>
+        <div className='details-items'>
+          <span>Cook Time: </span>
+          <span>{selectedRecipe.cookTime} Minutes</span>
+        </div>
+      </div>
+      <div className='header3 margin-top'>Ingredients:</div>
       <ul>
         {selectedRecipe.ingredients.map((ingredient) => (
           <ListItems

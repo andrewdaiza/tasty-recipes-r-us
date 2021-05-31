@@ -21,7 +21,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
 
   useEffect(() => {
     editForm();
-  }, [selectedRecipe]);
+  }, []);
 
   const editForm = () => {
     if (selectedRecipe) {
@@ -40,10 +40,11 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
     return new Date().toLocaleString().split(",").join("");
   };
 
+  // Add Directions to list
   const handleDirections = (e) => {
     e.preventDefault();
     if (inputDirections === "") {
-      alert("Please enter an ingredient and amount");
+      alert("Please enter data into Directions textbox");
       return;
     } else {
       setAddDirections([
@@ -57,7 +58,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
     setInputDirections("");
     setInputDirectionsOptional("");
   };
-
+  // Add Ingredients to list
   const handleIngredients = (e) => {
     e.preventDefault();
     if (
@@ -65,7 +66,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
       inputIngredientsMeasurement === "" ||
       inputIngredientsAmount <= 0
     ) {
-      alert("Please enter an ingredient and amount");
+      alert("Please enter data into Ingredients textboxes");
       return;
     } else {
       setAddIngredients([
@@ -82,6 +83,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
     setInputIngredientsAmount("");
     setInputIngredientsMeasurement("");
   };
+  // Save and Submit form to API
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -109,15 +111,8 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
         directions: addDirections,
         images: selectedRecipe.images,
       });
-      setInputTitle("");
-      setInputDesc("");
-      setInputServings("");
-      setInputPrep("");
-      setInputCook("");
       setInputDirections("");
       setInputIngredients("");
-      setAddDirections("");
-      setAddIngredients("");
       setInputIngredientsAmount("");
       setInputIngredientsMeasurement("");
       setInputDirectionsOptional(false);
@@ -125,7 +120,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
   };
   return (
     <form className='container flex-center' onSubmit={handleSubmit}>
-      <div className='header'>Edit Recipe</div>
+      <div className='header2'>Edit Recipe</div>
       <div className='form-container'>
         <div className='form-div'>
           <label>Title</label>
@@ -167,7 +162,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
         <div className='form-div'>
           {addIngredients && (
             <>
-              <div className='header3'>Ingredient List</div>
+              <div className='header3'>Ingredients List</div>
               <ul>
                 {addIngredients.map((ingredient) => (
                   <ListItems key={ingredient.uuid} param={ingredient} />
@@ -175,12 +170,12 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
               </ul>
             </>
           )}
-          <label>Ingredients</label>
+          <label>Amount</label>
           <input
-            onChange={(e) => setInputIngredients(e.target.value)}
-            type='text'
-            placeholder='Name'
-            value={inputIngredients}
+            onChange={(e) => setInputIngredientsAmount(e.target.value)}
+            type='number'
+            placeholder='Amount'
+            value={inputIngredientsAmount}
           ></input>
           <label>Measurement</label>
           <input
@@ -189,12 +184,12 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
             placeholder='Measurement'
             value={inputIngredientsMeasurement}
           ></input>
-          <label>Amount</label>
+          <label>Ingredient</label>
           <input
-            onChange={(e) => setInputIngredientsAmount(e.target.value)}
-            type='number'
-            placeholder='Amount'
-            value={inputIngredientsAmount}
+            onChange={(e) => setInputIngredients(e.target.value)}
+            type='text'
+            placeholder='Name'
+            value={inputIngredients}
           ></input>
           <button className='btn' onClick={(e) => handleIngredients(e)}>
             Add Ingredient
@@ -203,7 +198,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
         <div className='form-div'>
           {addDirections && (
             <>
-              <div className='header3'>Direction List:</div>
+              <div className='header3'>Directions List:</div>
               <ol>
                 {addDirections.map((direction) => (
                   <ListItems key={uuidv4()} param={direction} />
@@ -211,7 +206,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
               </ol>
             </>
           )}
-          <label>Directions</label>
+          <label>Direction</label>
           <input
             onChange={(e) => setInputDirections(e.target.value)}
             type='text'

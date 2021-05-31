@@ -4,7 +4,7 @@ import Special from "./Special";
 const ListItems = ({ param, specialsData }) => {
   return (
     <>
-      <li>
+      <li className='list-item'>
         <span>{param.amount || param.instructions} </span>
         <span> {param.measurement || param.optional} </span>
         {param.name}

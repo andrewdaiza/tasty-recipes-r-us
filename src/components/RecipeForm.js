@@ -1,6 +1,6 @@
 import React from "react";
 import ListItems from "./ListItems";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
@@ -19,18 +19,19 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
   const [addIngredients, setAddIngredients] = useState([]);
 
   const placeHolderImage = {
-    full: "/img/queso_brat_scramble.jpg",
-    medium: "/img/queso_brat_scramble--m.jpg",
-    small: "/img/queso_brat_scramble--s.jpg",
+    full: "/img/blueberry_toast.jpg",
+    medium: "/img/blueberry_toast--m.jpg",
+    small: "/img/blueberry_toast--s.jpg",
   };
   const localTimeStamp = () => {
     return new Date().toLocaleString().split(",").join("");
   };
 
+  // Add Directions to list
   const handleDirections = (e) => {
     e.preventDefault();
     if (inputDirections === "") {
-      alert("Please enter an ingredient and amount");
+      alert("Please enter data into Directions textbox");
       return;
     } else {
       setAddDirections([
@@ -45,6 +46,7 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
     setInputDirectionsOptional("");
   };
 
+  // Add Ingredients to list
   const handleIngredients = (e) => {
     e.preventDefault();
     if (
@@ -52,7 +54,7 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
       inputIngredientsMeasurement === "" ||
       inputIngredientsAmount <= 0
     ) {
-      alert("Please enter an ingredient and amount");
+      alert("Please enter data into Ingredients textboxes");
       return;
     } else {
       setAddIngredients([
@@ -68,8 +70,9 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
     setInputIngredients("");
     setInputIngredientsAmount("");
     setInputIngredientsMeasurement("");
-    console.log(addIngredients);
   };
+
+  // Save and Submit form to API
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -155,7 +158,7 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
         <div className='form-div'>
           {addIngredients && (
             <>
-              <div className='header3'>Ingredient List</div>
+              <div className='header3'>Ingredients List</div>
               <ul>
                 {addIngredients.map((ingredient) => (
                   <ListItems key={ingredient.uuid} param={ingredient} />

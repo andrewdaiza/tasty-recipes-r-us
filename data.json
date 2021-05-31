@@ -151,12 +151,18 @@
     },
     {
       "uuid": "7f8e872d-47a5-44e6-b1ad-7b7cb94f1d30",
-      "title": "Italian Meatballs YES",
-      "description": "Quick, easy and authentic. NO EDIT",
-      "servings": 6123123,
-      "prepTime": 2521312,
-      "cookTime": 20231123,
-      "editDate": "5/29/2021 3:36:02 PM",
+      "title": "Italian Meatballs",
+      "description": "Quick, easy and authentic.",
+      "images": {
+        "full": "/img/italian_meatballs.jpg",
+        "medium": "/img/italian_meatballs--m.jpg",
+        "small": "/img/italian_meatballs--s.jpg"
+      },
+      "servings": 6,
+      "prepTime": 25,
+      "cookTime": 20,
+      "postDate": "02/19/2018 12:47:42 AM",
+      "editDate": "02/19/2018 01:12:05 AM",
       "ingredients": [
         {
           "uuid": "3d810ba9-7e4e-48aa-b2e9-7918e38b358d",
@@ -193,24 +199,6 @@
           "amount": 1.25,
           "measurement": "lbs",
           "name": "ground italian sausage"
-        },
-        {
-          "uuid": "4b78df25-ffdc-41bf-a4f5-aa3daf508540",
-          "name": "wada",
-          "amount": 2323,
-          "measurement": "awdwa"
-        },
-        {
-          "uuid": "85948a38-cc2c-475e-a377-3a3f2a64eb18",
-          "name": "dwawad",
-          "amount": 2.32e+25,
-          "measurement": "awdaw"
-        },
-        {
-          "uuid": "ccc6f986-bba8-4630-8640-b6a5cd6821a5",
-          "name": "wadwa",
-          "amount": 2332,
-          "measurement": "awdawd"
         }
       ],
       "directions": [
@@ -237,35 +225,23 @@
         {
           "instructions": "Serve with your favorite sauce and spaghetti.",
           "optional": true
-        },
-        {
-          "instructions": "322awd",
-          "optional": true
-        },
-        {
-          "instructions": "awdawdwa",
-          "optional": true
-        },
-        {
-          "instructions": "awdawd",
-          "optional": true
         }
-      ],
-      "images": {
-        "full": "/img/italian_meatballs.jpg",
-        "medium": "/img/italian_meatballs--m.jpg",
-        "small": "/img/italian_meatballs--s.jpg"
-      }
+      ]
     },
     {
       "uuid": "3555aec3-47e1-44d4-b8f2-607aad5cee67",
-      "title": "Kielbasa Skilletaeawe",
-      "description": "A polish delicacy.awdaw",
-      "servings": 85434,
+      "title": "Kielbasa Skillet",
+      "description": "A polish delicacy.",
+      "images": {
+        "full": "/img/kielbasa_skillet.jpg",
+        "medium": "/img/kielbasa_skillet--m.jpg",
+        "small": "/img/kielbasa_skillet--s.jpg"
+      },
+      "servings": 8,
       "prepTime": 20,
       "cookTime": 20,
       "postDate": "03/12/2018 01:51:12 PM",
-      "editDate": "5/29/2021 3:40:59 PM",
+      "editDate": "03/15/2018 04:14:03 PM",
       "ingredients": [
         {
           "uuid": "3d810ba9-7e4e-48aa-b2e9-7918e38b358d",
@@ -339,12 +315,7 @@
           "instructions": "Serve with sausage mixture.",
           "optional": false
         }
-      ],
-      "images": {
-        "full": "/img/kielbasa_skillet.jpg",
-        "medium": "/img/kielbasa_skillet--m.jpg",
-        "small": "/img/kielbasa_skillet--s.jpg"
-      }
+      ]
     },
     {
       "uuid": "3555aec3-47e1-44d4-b8f2-607aad5cee69",
@@ -511,32 +482,84 @@
       ]
     },
     {
-      "uuid": "36c6f907-0ab8-4819-aa43-6732ee58d347",
-      "title": "awdaw",
-      "description": "awdaw",
-      "servings": 323,
-      "prepTime": 3223,
-      "cookTime": 2323,
-      "postDate": "5/29/2021 2:01:29 PM",
-      "editDate": "5/29/2021 2:01:29 PM",
+      "uuid": "bace02c6-ccbb-4e63-a1d3-3186fd929e95",
+      "title": "Blueberry Toast",
+      "description": "The ultimate homemade breakfast!",
+      "servings": 4,
+      "prepTime": 10,
+      "cookTime": 17,
+      "postDate": "5/29/2021 8:16:04 PM",
+      "editDate": "5/31/2021 2:35:53 PM",
       "ingredients": [
         {
-          "uuid": "e169a964-31c6-4a60-8854-d03e199bd9cb",
-          "name": "dawd",
-          "amount": 2323,
-          "measurement": "awdawd"
+          "uuid": "6447f6d6-4cf3-4e82-aaf2-b6eb256d32d5",
+          "name": "blueberry banana yeast bread",
+          "amount": 8,
+          "measurement": "thick slices"
+        },
+        {
+          "uuid": "57f0224f-583c-4064-a232-573dd29b958e",
+          "name": "eggs",
+          "amount": 4,
+          "measurement": "large"
+        },
+        {
+          "uuid": "92e27c45-9bf3-4460-9515-105ed8ba39ff",
+          "name": "whole milk",
+          "amount": 1,
+          "measurement": "cup"
+        },
+        {
+          "uuid": "6fd57388-ce38-4e20-8686-fceaf7124d3e",
+          "name": "pure vanilla extract",
+          "amount": 1,
+          "measurement": "teaspoon "
+        },
+        {
+          "uuid": "e637c7e5-b82d-4043-9a95-db6495b04a64",
+          "name": "ground cinnamon",
+          "amount": 0.5,
+          "measurement": "teaspoon"
+        },
+        {
+          "uuid": "da7f2497-dac7-497e-a1b7-bff4955ddd54",
+          "name": "kosher salt",
+          "amount": 1,
+          "measurement": "pinch"
+        },
+        {
+          "uuid": "a2ce4a7f-8a82-4000-835f-47ffdb696c77",
+          "name": "almond extract",
+          "amount": 0.5,
+          "measurement": "teaspoon"
         }
       ],
       "directions": [
         {
-          "instructions": "awdawdaw",
+          "instructions": "Whisk together eggs, milk, vanilla, cinnamon, salt, and optional almond extract until throughly blended. (Alternatively, use an immersion blender quickly pulse ingredients together). Pour into a shallow bowl wide enough for bread.",
+          "optional": true
+        },
+        {
+          "instructions": "Preheat skillet. Set a large skillet over medium heat and melt about a tablespoon of butter.",
+          "optional": true
+        },
+        {
+          "instructions": "Working with one slice of bread at a time, dip bread into egg mixture*. Turn to coat other side of bread. Allow any excess liquid to drain.",
+          "optional": true
+        },
+        {
+          "instructions": "Cook bread on hot skillet until browned on one side, about 2 minutes. Before flipping, sprinkle two pinches of sugar on exposed side of bread. Flip and brown the other side, another 2 minutes. Repeat with remaining bread. Add additional butter to skillet as needed.",
+          "optional": true
+        },
+        {
+          "instructions": "Immediately serve warm French toast with sliced bananas, fresh blueberries, and maple syrup.",
           "optional": true
         }
       ],
       "images": {
-        "full": "/img/queso_brat_scramble.jpg",
-        "medium": "/img/queso_brat_scramble--m.jpg",
-        "small": "/img/queso_brat_scramble--s.jpg"
+        "full": "/img/blueberry_toast.jpg",
+        "medium": "/img/blueberry_toast--m.jpg",
+        "small": "/img/blueberry_toast--s.jpg"
       }
     }
   ],
