@@ -321,16 +321,11 @@
       "uuid": "3555aec3-47e1-44d4-b8f2-607aad5cee69",
       "title": "Brussel Chips",
       "description": "Tasty, crispy, spicy and healthy!",
-      "images": {
-        "full": "/img/brussel_chips.jpg",
-        "medium": "/img/brussel_chips--m.jpg",
-        "small": "/img/brussel_chips--s.jpg"
-      },
       "servings": 4,
       "prepTime": 15,
       "cookTime": 25,
       "postDate": "03/28/2018 01:27:51 AM",
-      "editDate": "03/30/2018 05:51:52 PM",
+      "editDate": "5/31/2021 5:57:27 PM",
       "ingredients": [
         {
           "uuid": "77ae45d7-659b-4cb5-a4ea-07f00e442974",
@@ -388,7 +383,12 @@
           "instructions": "Roast leaves in the preheated oven until wilted and lightly browned, about 15 minutes. Transfer any crispy leaves to a serving plate and continue roasting, removing crispy leaves at 5-minute intervals, until all leaves are crispy, about 10 minutes more.",
           "optional": false
         }
-      ]
+      ],
+      "images": {
+        "full": "/img/brussel_chips.jpg",
+        "medium": "/img/brussel_chips--m.jpg",
+        "small": "/img/brussel_chips--s.jpg"
+      }
     },
     {
       "uuid": "f8fc88dc-2f89-43fa-b431-00d90eeba521",
@@ -487,9 +487,9 @@
       "description": "The ultimate homemade breakfast!",
       "servings": 4,
       "prepTime": 10,
-      "cookTime": 17,
+      "cookTime": 12,
       "postDate": "5/29/2021 8:16:04 PM",
-      "editDate": "5/31/2021 2:35:53 PM",
+      "editDate": "5/31/2021 5:20:24 PM",
       "ingredients": [
         {
           "uuid": "6447f6d6-4cf3-4e82-aaf2-b6eb256d32d5",

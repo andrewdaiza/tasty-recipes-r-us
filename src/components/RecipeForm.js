@@ -124,6 +124,7 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
             onChange={(e) => setInputTitle(e.target.value)}
             type='text'
             placeholder='Title'
+            maxlength='20'
             value={inputTitle}
           ></input>
           <label>Description</label>
@@ -131,6 +132,7 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
             onChange={(e) => setInputDesc(e.target.value)}
             type='text'
             placeholder='Description'
+            maxlength='50'
             value={inputDesc}
           ></input>
           <label>Servings</label>
@@ -158,7 +160,7 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
         <div className='form-div'>
           {addIngredients && (
             <>
-              <div className='header3'>Ingredients List</div>
+              <div className='header3'>Ingredients:</div>
               <ul>
                 {addIngredients.map((ingredient) => (
                   <ListItems key={ingredient.uuid} param={ingredient} />
@@ -166,27 +168,28 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
               </ul>
             </>
           )}
-          <label>Ingredients</label>
-          <input
-            onChange={(e) => setInputIngredients(e.target.value)}
-            type='text'
-            placeholder='Name'
-            value={inputIngredients}
-          ></input>
-          <label>Measurement</label>
-          <input
-            onChange={(e) => setInputIngredientsMeasurement(e.target.value)}
-            type='text'
-            placeholder='Measurement'
-            value={inputIngredientsMeasurement}
-          ></input>
-          <label>Amount</label>
+          <label>Ingredient Amount</label>
           <input
             onChange={(e) => setInputIngredientsAmount(e.target.value)}
             type='number'
             placeholder='Amount'
             value={inputIngredientsAmount}
           ></input>
+          <label>Ingredient Name</label>
+          <input
+            onChange={(e) => setInputIngredients(e.target.value)}
+            type='text'
+            placeholder='Name'
+            value={inputIngredients}
+          ></input>
+          <label>Ingredient Measurement</label>
+          <input
+            onChange={(e) => setInputIngredientsMeasurement(e.target.value)}
+            type='text'
+            placeholder='Measurement'
+            value={inputIngredientsMeasurement}
+          ></input>
+
           <button className='btn' onClick={(e) => handleIngredients(e)}>
             Add Ingredient
           </button>
@@ -194,7 +197,7 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
         <div className='form-div'>
           {addDirections && (
             <>
-              <div className='header3'>Direction List:</div>
+              <div className='header3'>Directions:</div>
               <ol>
                 {addDirections.map((direction) => (
                   <ListItems key={uuidv4()} param={direction} />
@@ -202,11 +205,11 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
               </ol>
             </>
           )}
-          <label>Directions</label>
+          <label>Direction Instruction</label>
           <input
             onChange={(e) => setInputDirections(e.target.value)}
             type='text'
-            placeholder='Directions'
+            placeholder='Instruction'
             value={inputDirections}
           ></input>
           <label>Required</label>

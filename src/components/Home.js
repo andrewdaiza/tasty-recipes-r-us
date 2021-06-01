@@ -66,18 +66,23 @@ const Home = () => {
     setRecipeData(recipeData.map((r) => (r.uuid === recipe.uuid ? data : r)));
     setSelectedRecipe(data);
   };
+  // Display Detail View
   const handleDetailView = (recipeData) => {
     setDetailView(!detailView);
     setSelectedRecipe(recipeData);
+    setToggleShowForm(false);
   };
+  // Display Recipe View
   const handleBackButton = (recipeData) => {
     setDetailView(!detailView);
     setToggleShowForm(false);
   };
+  // Display Add Form
   const handleAddButton = () => {
     setAddEditRecipeSelected(true);
     setToggleShowForm(!toggleShowForm);
   };
+  // Display Edit Form
   const handleEditButton = () => {
     setAddEditRecipeSelected(false);
     setToggleShowForm(!toggleShowForm);
