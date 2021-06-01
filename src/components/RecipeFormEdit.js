@@ -129,7 +129,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
             onChange={(e) => setInputTitle(e.target.value)}
             type='text'
             placeholder='Title'
-            maxlength='20'
+            maxLength='20'
             value={inputTitle}
           ></input>
           <label>Description</label>
@@ -137,7 +137,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
             onChange={(e) => setInputDesc(e.target.value)}
             type='text'
             placeholder='Description'
-            maxlength='50'
+            maxLength='50'
             value={inputDesc}
           ></input>
           <label>Servings</label>
