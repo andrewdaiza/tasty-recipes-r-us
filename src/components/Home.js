@@ -6,8 +6,8 @@ import RecipeForm from "./RecipeForm";
 import RecipeFormEdit from "./RecipeFormEdit";
 
 const Home = () => {
-  const [recipeData, setRecipeData] = useState();
-  const [specialsData, setSpecialsData] = useState();
+  const [recipeData, setRecipeData] = useState([]);
+  const [specialsData, setSpecialsData] = useState([]);
   const [detailView, setDetailView] = useState(false);
   const [selectedRecipe, setSelectedRecipe] = useState("");
   const [addEditRecipeSelected, setAddEditRecipeSelected] = useState(false);
@@ -73,7 +73,7 @@ const Home = () => {
     setToggleShowForm(false);
   };
   // Display Recipe View
-  const handleBackButton = (recipeData) => {
+  const handleBackButton = () => {
     setDetailView(!detailView);
     setToggleShowForm(false);
   };
@@ -118,24 +118,24 @@ const Home = () => {
                 <RecipeFormEdit
                   editRecipe={editRecipe}
                   selectedRecipe={selectedRecipe}
+                  toggleEditView={handleEditButton}
                 />
               )}
             </>
           )}
           <div className='flex-recipes'>
-            {recipeData &&
-              (detailView ? (
-                <RecipeDetails
-                  key={selectedRecipe.uuid}
-                  selectedRecipe={selectedRecipe}
-                  specialsData={specialsData}
-                />
-              ) : (
-                <Recipes
-                  recipeData={recipeData}
-                  showDetailView={handleDetailView}
-                />
-              ))}
+            {detailView ? (
+              <RecipeDetails
+                key={selectedRecipe.uuid}
+                selectedRecipe={selectedRecipe}
+                specialsData={specialsData}
+              />
+            ) : (
+              <Recipes
+                recipeData={recipeData}
+                showDetailView={handleDetailView}
+              />
+            )}
           </div>
         </div>
       </div>

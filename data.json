@@ -232,16 +232,11 @@
       "uuid": "3555aec3-47e1-44d4-b8f2-607aad5cee67",
       "title": "Kielbasa Skillet",
       "description": "A polish delicacy.",
-      "images": {
-        "full": "/img/kielbasa_skillet.jpg",
-        "medium": "/img/kielbasa_skillet--m.jpg",
-        "small": "/img/kielbasa_skillet--s.jpg"
-      },
       "servings": 8,
       "prepTime": 20,
       "cookTime": 20,
       "postDate": "03/12/2018 01:51:12 PM",
-      "editDate": "03/15/2018 04:14:03 PM",
+      "editDate": "6/6/2021 12:00:55 PM",
       "ingredients": [
         {
           "uuid": "3d810ba9-7e4e-48aa-b2e9-7918e38b358d",
@@ -315,7 +310,12 @@
           "instructions": "Serve with sausage mixture.",
           "optional": false
         }
-      ]
+      ],
+      "images": {
+        "full": "/img/kielbasa_skillet.jpg",
+        "medium": "/img/kielbasa_skillet--m.jpg",
+        "small": "/img/kielbasa_skillet--s.jpg"
+      }
     },
     {
       "uuid": "3555aec3-47e1-44d4-b8f2-607aad5cee69",
@@ -489,7 +489,7 @@
       "prepTime": 10,
       "cookTime": 12,
       "postDate": "5/29/2021 8:16:04 PM",
-      "editDate": "5/31/2021 5:20:24 PM",
+      "editDate": "6/1/2021 6:52:24 AM",
       "ingredients": [
         {
           "uuid": "6447f6d6-4cf3-4e82-aaf2-b6eb256d32d5",

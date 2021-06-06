@@ -3,7 +3,7 @@ import ListItems from "./ListItems";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const RecipeForm = ({ editRecipe, selectedRecipe }) => {
+const RecipeForm = ({ editRecipe, selectedRecipe, toggleEditView }) => {
   const [inputTitle, setInputTitle] = useState("");
   const [inputDesc, setInputDesc] = useState("");
   const [inputServings, setInputServings] = useState("");
@@ -112,6 +112,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe }) => {
         directions: addDirections,
         images: selectedRecipe.images,
       });
+      toggleEditView();
       setInputDirections("");
       setInputIngredients("");
       setInputIngredientsAmount("");
