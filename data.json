@@ -153,16 +153,11 @@
       "uuid": "7f8e872d-47a5-44e6-b1ad-7b7cb94f1d30",
       "title": "Italian Meatballs",
       "description": "Quick, easy and authentic.",
-      "images": {
-        "full": "/img/italian_meatballs.jpg",
-        "medium": "/img/italian_meatballs--m.jpg",
-        "small": "/img/italian_meatballs--s.jpg"
-      },
       "servings": 6,
       "prepTime": 25,
       "cookTime": 20,
       "postDate": "02/19/2018 12:47:42 AM",
-      "editDate": "02/19/2018 01:12:05 AM",
+      "editDate": "6/8/2021 7:58:35 AM",
       "ingredients": [
         {
           "uuid": "3d810ba9-7e4e-48aa-b2e9-7918e38b358d",
@@ -226,7 +221,12 @@
           "instructions": "Serve with your favorite sauce and spaghetti.",
           "optional": true
         }
-      ]
+      ],
+      "images": {
+        "full": "/img/italian_meatballs.jpg",
+        "medium": "/img/italian_meatballs--m.jpg",
+        "small": "/img/italian_meatballs--s.jpg"
+      }
     },
     {
       "uuid": "3555aec3-47e1-44d4-b8f2-607aad5cee67",
@@ -236,7 +236,7 @@
       "prepTime": 20,
       "cookTime": 20,
       "postDate": "03/12/2018 01:51:12 PM",
-      "editDate": "6/6/2021 12:00:55 PM",
+      "editDate": "6/8/2021 5:09:39 PM",
       "ingredients": [
         {
           "uuid": "3d810ba9-7e4e-48aa-b2e9-7918e38b358d",
