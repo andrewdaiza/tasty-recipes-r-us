@@ -99,7 +99,7 @@ const Home = () => {
           </button>
         )}
         <div className='flex-center'>
-          <div className='header'>Tasty Recipes</div>
+          <div className='header'>Tasty Recipes R Us</div>
           <div>
             <button className='btn' onClick={() => handleAddButton()}>
               Add Recipe

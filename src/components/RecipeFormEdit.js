@@ -100,7 +100,7 @@ const RecipeForm = ({ editRecipe, selectedRecipe, toggleEditView }) => {
       return;
     } else {
       editRecipe({
-        uuid: selectedRecipe.uuid,
+        id: selectedRecipe.id,
         title: inputTitle,
         description: inputDesc,
         servings: Number(inputServings),
