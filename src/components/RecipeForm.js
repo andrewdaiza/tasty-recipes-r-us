@@ -88,7 +88,7 @@ const RecipeForm = ({ addNewRecipe, selectedRecipe }) => {
       return;
     } else {
       addNewRecipe({
-        uuid: uuidv4(),
+        id: uuidv4(),
         title: inputTitle,
         description: inputDesc,
         servings: Number(inputServings),
