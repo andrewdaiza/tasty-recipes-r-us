@@ -31,19 +31,19 @@ const Home = () => {
 
   // Fetch Recipes
   const fetchRecipes = async () => {
-    const res = await fetch(":4000/recipes");
+    const res = await fetch("https://recipe-json-api.herokuapp.com/recipes");
     const data = await res.json();
     return data;
   };
   // Fetch Specials
   const fetchSpecials = async () => {
-    const res = await fetch(":4000/specials");
+    const res = await fetch("https://recipe-json-api.herokuapp.com/specials");
     const data = await res.json();
     return data;
   };
   // Add Recipe
   const addRecipe = async (recipe) => {
-    const res = await fetch("http://localhost:3001/recipes", {
+    const res = await fetch("https://recipe-json-api.herokuapp.com/recipes", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -55,13 +55,16 @@ const Home = () => {
   };
   // Edit Recipe
   const editRecipe = async (recipe) => {
-    const res = await fetch(`http://localhost:3001/recipes/${recipe.uuid}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(recipe),
-    });
+    const res = await fetch(
+      `https://recipe-json-api.herokuapp.com/recipes/${recipe.uuid}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(recipe),
+      }
+    );
     const data = await res.json();
     setRecipeData(recipeData.map((r) => (r.uuid === recipe.uuid ? data : r)));
     setSelectedRecipe(data);
