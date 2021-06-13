@@ -4,6 +4,7 @@ import Recipes from "./Recipes";
 import RecipeDetails from "./RecipeDetails";
 import RecipeForm from "./RecipeForm";
 import RecipeFormEdit from "./RecipeFormEdit";
+import Loading from "./Loading";
 
 const Home = () => {
   const [recipeData, setRecipeData] = useState([]);
@@ -12,6 +13,7 @@ const Home = () => {
   const [selectedRecipe, setSelectedRecipe] = useState("");
   const [addEditRecipeSelected, setAddEditRecipeSelected] = useState(false);
   const [toggleShowForm, setToggleShowForm] = useState(false);
+  const [toggleShowLoading, setToggleShowLoading] = useState(true);
 
   // Get data from API on Mount
   useEffect(() => {
@@ -33,6 +35,7 @@ const Home = () => {
   const fetchRecipes = async () => {
     const res = await fetch("https://recipe-json-api.herokuapp.com/recipes");
     const data = await res.json();
+    setToggleShowLoading(false);
     return data;
   };
   // Fetch Specials
@@ -126,6 +129,8 @@ const Home = () => {
               )}
             </>
           )}
+          {toggleShowLoading && <Loading />}
+
           <div className='flex-recipes'>
             {detailView ? (
               <RecipeDetails
