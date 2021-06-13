@@ -56,7 +56,7 @@ const Home = () => {
   // Edit Recipe
   const editRecipe = async (recipe) => {
     const res = await fetch(
-      `https://recipe-json-api.herokuapp.com/recipes/${recipe.uuid}`,
+      `https://recipe-json-api.herokuapp.com/recipes/${recipe.id}`,
       {
         method: "PUT",
         headers: {
