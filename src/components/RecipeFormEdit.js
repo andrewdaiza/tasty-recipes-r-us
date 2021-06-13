@@ -110,7 +110,11 @@ const RecipeForm = ({ editRecipe, selectedRecipe, toggleEditView }) => {
         editDate: localTimeStamp(),
         ingredients: addIngredients,
         directions: addDirections,
-        images: selectedRecipe.images,
+        images: {
+          full: selectedRecipe.images.full,
+          medium: selectedRecipe.images.medium,
+          small: selectedRecipe.images.small,
+        },
       });
       toggleEditView();
       setInputDirections("");
