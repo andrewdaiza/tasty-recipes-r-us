@@ -66,7 +66,7 @@ const Home = () => {
       }
     );
     const data = await res.json();
-    setRecipeData(recipeData.map((r) => (r.uuid === recipe.uuid ? data : r)));
+    setRecipeData(recipeData.map((r) => (r.id === recipe.id ? data : r)));
     setSelectedRecipe(data);
   };
   // Display Detail View
