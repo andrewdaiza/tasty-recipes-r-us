@@ -31,13 +31,13 @@ const Home = () => {
 
   // Fetch Recipes
   const fetchRecipes = async () => {
-    const res = await fetch("http://localhost:3001/recipes");
+    const res = await fetch(":4000/recipes");
     const data = await res.json();
     return data;
   };
   // Fetch Specials
   const fetchSpecials = async () => {
-    const res = await fetch("http://localhost:3001/specials");
+    const res = await fetch(":4000/specials");
     const data = await res.json();
     return data;
   };
